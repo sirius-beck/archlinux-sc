@@ -1,4 +1,4 @@
-# archlinux-sc
+# ArchZen
 
 A simple Arch Linux installation script
 
@@ -7,15 +7,15 @@ A simple Arch Linux installation script
 1. Clone this repository and navigate to the script folder.
 
    ```bash
-   git clone https://github.com/sirius-beck/archlinux-sc.git && cd archlinux-sc/archlinux-sc
+   git clone https://github.com/sirius-beck/archzen.git && cd archzen/archzen
    ```
 
-2. Configure the installation in the [config.sh](archlinux-sc/config.sh) file.
+2. Configure the installation in the [config.sh](archzen/config.sh) file.
 
-3. Run the [install.sh](archlinux-sc/install.sh) file.
+3. Run the [install.sh](archzen/install.sh) file.
 
    ```bash
    chmod +x ./install.sh && ./install.sh
    ```
 
-4. The [post-install.sh](archlinux-sc/post-install.sh) file will be automatically executed when necessary.
+4. The [post-install.sh](archzen/post-install.sh) file will be automatically executed when necessary.
