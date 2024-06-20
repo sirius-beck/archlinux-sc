@@ -42,11 +42,11 @@ function install_cachyos_repo() {
 		pacman-key --recv-keys F3B607488DB35A47 --keyserver keyserver.ubuntu.com
 		pacman-key --lsign-key F3B607488DB35A47
 
-		pacman -U --noconfirm "${mirror_cachyos}/cachyos-keyring-3-1-any.pkg.tar.zst" \
+		pacman -U --noconfirm "${mirror_cachyos}/cachyos-keyring-20240331-1-any.pkg.tar.zst" \
 			"${mirror_cachyos}/cachyos-mirrorlist-18-1-any.pkg.tar.zst" \
 			"${mirror_cachyos}/cachyos-v3-mirrorlist-18-1-any.pkg.tar.zst" \
 			"${mirror_cachyos}/cachyos-v4-mirrorlist-6-1-any.pkg.tar.zst" \
-			"${mirror_cachyos}/pacman-6.0.2-16-x86_64.pkg.tar.zst"
+			"${mirror_cachyos}/pacman-6.1.0-5-x86_64.pkg.tar.zst"
 	}
 
 	function add_repo_from_version() {
@@ -248,7 +248,9 @@ function run_all_tasks() {
 	run_task "Setting up timezone" setup_timezone || exit 1
 	run_task "Setting up location" setup_location || exit 1
 	run_task "Setting up network" setup_network || exit 1
-	run_task "Installing CachyOS repository" install_cachyos_repo || exit 1
+	if [ "$enable_cachyos_repo" = true ]; then
+		run_task "Installing CachyOS repository" install_cachyos_repo || exit 1
+	fi
 	run_task "Installing kernel" install_kernel || exit 1
 	run_task "Installing microcode" install_microcode || exit 1
 	run_task "Installing boot manager" install_boot_manager || exit 1
