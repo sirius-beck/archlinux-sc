@@ -37,7 +37,7 @@ export desktop_environment="kde" # kde || gnome || xfce || i3
 
 # default settings (do not change)
 export system_bits="$(cat /sys/firmware/efi/fw_platform_size)"
-export log_file="archzen/archzen.log"
+export log_file="archzen.log"
 export efi_partition efi_mountpoint
 
 if ! [[ -d /sys/firmware/efi ]]; then
