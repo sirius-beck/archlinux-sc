@@ -224,7 +224,8 @@ main() {
 		yesno "Do you want to reboot now?" && reboot
 	else
 		echo "An error occurred."
-		echo -e "Check the log file for more information: $(color cyan "$log_file")"
+		echo "Check the log file for more information"
+		echo -e "Use: $(color cyan "cat /$log_file")"
 		cat "/mnt/${log_file}" 1>>"/${log_file}" 2>/dev/null
 		umount -R /mnt &>/dev/null
 		exit 1
