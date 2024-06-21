@@ -90,6 +90,8 @@ function install_kernel() {
 	else
 		install_from_repo "$kernel" "${kernel}-headers"
 	fi
+
+	mkinitcpio -P
 }
 
 function install_microcode() {
@@ -128,8 +130,8 @@ function install_boot_manager() {
 	}
 
 	function install_systemd_boot() {
-		bootctl --path="$efi_mountpoint" install
-		bootctl --path="$efi_mountpoint" update
+		bootctl --esp-path="$efi_mountpoint" install
+		bootctl --esp-path="$efi_mountpoint" update
 		systemctl enable systemd-boot-update.service
 	}
 
