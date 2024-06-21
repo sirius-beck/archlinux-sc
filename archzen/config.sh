@@ -25,7 +25,7 @@ export partition_table="gpt" # gpt || msdos
 export filesystem="ext4"
 
 export kernel="linux-cachyos"      # linux-zen || linux-lts || linux-cachyos || anyone you want
-export boot_manager="systemd-boot" # grub (UEFI x64) || systemd-boot (UEFI x86 e x64) || syslinux (BIOS)
+export boot_manager="grub" # grub (UEFI x64) || systemd-boot (UEFI x86 e x64) || syslinux (BIOS)
 export enable_dual_boot=false      # true || false; only GRUB
 
 export aur_helper="paru"        # paru || yay
